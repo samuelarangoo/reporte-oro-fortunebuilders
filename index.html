@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<title>Reporte Semanal del Oro · 13 – 17 Jul 2026 · Fortune Builders AI Trading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#080B11; --panel:#0E1421; --panel-2:#121A2B; --line:#1F2A3D;
+  --gold:#D4AF37; --gold-soft:#F2C94C; --gold-deep:#A08920;
+  --gold-glow:rgba(212,175,55,0.18);
+  --ink:#ECEEF2; --muted:#8995A8; --red:#E0524E; --green:#3FB680;
+  --shadow:0 24px 60px rgba(0,0,0,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%,rgba(212,175,55,.10),transparent 60%),
+    radial-gradient(900px 500px at -10% 20%,rgba(212,175,55,.05),transparent 55%),
+    var(--bg);
+  color:var(--ink);font-family:'Inter',system-ui,sans-serif;font-weight:300;
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  -webkit-text-size-adjust:100%;text-size-adjust:100%;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 26px}
+.eyebrow{font-family:'Cormorant',serif;font-style:italic;font-size:1.05rem;color:var(--gold);letter-spacing:.04em}
+.label{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+h2{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-.01em}
+.num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+
+/* TOP BAR */
+.fb-topbar{background:linear-gradient(90deg,rgba(212,175,55,.12) 0%,rgba(212,175,55,.04) 50%,transparent 100%);border-bottom:1px solid rgba(212,175,55,.2);padding:8px 0;position:relative;z-index:10}
+.fb-topbar-inner{max-width:1040px;margin:0 auto;padding:0 26px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.fb-topbar-left{display:flex;align-items:center;gap:10px}
+.fb-pulse{width:7px;height:7px;border-radius:50%;background:var(--gold);flex-shrink:0;animation:pulse-gold 2s ease-in-out infinite}
+@keyframes pulse-gold{0%,100%{box-shadow:0 0 0 0 rgba(212,175,55,.6)}50%{box-shadow:0 0 0 5px rgba(212,175,55,0)}}
+.fb-topbar-label{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+.fb-topbar-links{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.fb-topbar-links a{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--muted);text-decoration:none;transition:color .2s}
+.fb-topbar-links a:hover{color:var(--gold-soft)}
+.fb-topbar-sep{color:var(--line);font-size:11px}
+
+/* HEADER */
+header{border-bottom:1px solid var(--line)}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:22px 0;flex-wrap:wrap;gap:10px}
+.brand{display:flex;align-items:center;gap:13px}
+.brand b{font-family:'Space Grotesk';font-weight:600;font-size:1rem;letter-spacing:.01em}
+.brand span{display:block;font-size:.66rem;letter-spacing:.26em;color:var(--muted);text-transform:uppercase;margin-top:1px}
+.stamp{text-align:right}
+.stamp .num{font-size:.78rem;color:var(--gold-soft);display:block}
+.stamp small{font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+/* HERO */
+.hero{padding:54px 0 46px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold-glow),var(--gold),var(--gold-glow),transparent);animation:scan 5s ease-in-out infinite;pointer-events:none}
+@keyframes scan{0%{transform:translateY(0);opacity:0}5%{opacity:1}95%{opacity:.5}100%{transform:translateY(320px);opacity:0}}
+.hero .eyebrow{display:block;margin-bottom:14px}
+.hero h1{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(2.7rem,7vw,4.7rem);line-height:1;letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero .asset{font-family:'JetBrains Mono';font-size:.8rem;letter-spacing:.3em;color:var(--muted);margin-top:18px;text-transform:uppercase}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:34px;align-items:end;margin-top:30px}
+.thesis{font-size:1.06rem;color:#C9D2E0;font-weight:300;max-width:42ch}
+.thesis b{color:var(--ink);font-weight:500}
+.price-card{background:linear-gradient(160deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:22px 24px;box-shadow:var(--shadow)}
+.price-card .label{display:block;margin-bottom:8px}
+.price-card .big{font-family:'JetBrains Mono';font-weight:700;font-size:2.15rem;color:var(--gold-soft);letter-spacing:-.02em}
+.price-card .sub{font-size:.78rem;color:var(--muted);margin-top:4px}
+.bias-tag{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:'JetBrains Mono';font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:7px 13px;border-radius:6px;border:1px solid rgba(224,82,78,.4);background:rgba(224,82,78,.08);color:#F0908C}
+.bias-tag.bull{border-color:rgba(63,182,128,.4);background:rgba(63,182,128,.08);color:#7ED9AC}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 10px var(--red)}
+.bias-tag.bull .dot{background:var(--green);box-shadow:0 0 10px var(--green)}
+
+/* SECCIONES */
+section{padding:48px 0}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:26px}
+.sec-head .idx{font-family:'JetBrains Mono';font-size:.74rem;color:var(--gold);letter-spacing:.18em}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2rem)}
+.sec-head .tail{flex:1;height:1px;background:var(--line);align-self:center}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px;position:relative;overflow:hidden;transition:border-color .25s}
+.card:hover{border-color:rgba(212,175,55,.2)}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--gold),var(--gold-deep));opacity:.7}
+.card .kicker{font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.card h3{font-family:'Space Grotesk';font-weight:600;font-size:1.18rem;margin-bottom:10px}
+.card h3 .pill{font-family:'JetBrains Mono';font-size:.62rem;padding:3px 8px;border-radius:4px;margin-left:8px;vertical-align:middle;letter-spacing:.1em}
+.pill.bear{background:rgba(224,82,78,.14);color:#F0908C}
+.pill.bull{background:rgba(63,182,128,.14);color:#7ED9AC}
+.pill.parcial{background:rgba(212,175,55,.16);color:var(--gold-soft)}
+.card p{font-size:.93rem;color:#BAC4D4}
+.card ul{list-style:none;margin-top:10px;font-size:.9rem;color:#BAC4D4}
+.card ul li{padding-left:18px;position:relative;margin-bottom:6px}
+.card ul li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700}
+.ladder{background:linear-gradient(180deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:8px;box-shadow:var(--shadow)}
+.rung{display:grid;grid-template-columns:110px 1fr auto;align-items:center;gap:14px;padding:13px 18px;border-radius:10px}
+.rung+.rung{border-top:1px solid rgba(255,255,255,.03)}
+.rung .tier{font-family:'JetBrains Mono';font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.rung .desc{font-size:.9rem;color:#C2CCDB}
+.rung .lvl{font-family:'JetBrains Mono';font-weight:700;font-size:1.12rem}
+.rung.res .lvl{color:#F0908C}
+.rung.sup .lvl{color:#7ED9AC}
+.rung.now{background:linear-gradient(90deg,rgba(212,175,55,.16),rgba(212,175,55,.03));border:1px solid rgba(212,175,55,.4);margin:4px 0}
+.rung.now .tier{color:var(--gold)}.rung.now .lvl{color:var(--gold-soft);font-size:1.3rem}.rung.now .desc{color:var(--gold-soft)}
+.rung.arena{background:linear-gradient(90deg,rgba(224,82,78,.10),rgba(224,82,78,.02));border:1px solid rgba(224,82,78,.35)}
+.rung.arena .tier{color:#F0908C}
+.three{display:grid;gap:16px}
+.topic{display:grid;grid-template-columns:64px 1fr;gap:20px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+.topic .big-num{font-family:'Cormorant',serif;font-weight:600;font-size:3.2rem;line-height:.8;color:var(--gold);opacity:.85}
+.topic h3{font-family:'Space Grotesk';font-weight:600;font-size:1.18rem;margin-bottom:6px}
+.topic .meta{font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:10px}
+.topic p{font-size:.94rem;color:#BAC4D4}
+.topic p b{color:var(--ink);font-weight:500}
+.cal{width:100%;border-collapse:collapse;font-size:.88rem}
+.cal thead th{font-family:'JetBrains Mono';font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-align:left;padding:0 14px 12px;border-bottom:1px solid var(--line)}
+.cal td{padding:14px;border-bottom:1px solid rgba(255,255,255,.04);vertical-align:top}
+.cal tr:hover td{background:rgba(212,175,55,.03)}
+.cal .day{font-family:'JetBrains Mono';font-weight:500;color:var(--ink);white-space:nowrap}
+.cal .time{font-family:'JetBrains Mono';color:var(--gold-soft);white-space:nowrap}
+.cal .time small{display:block;color:var(--muted);font-size:.66rem;margin-top:2px}
+.cal .ev b{display:block;color:var(--ink);font-weight:500;margin-bottom:2px}
+.cal .ev span{color:var(--muted);font-size:.82rem}
+.imp{font-family:'JetBrains Mono';font-size:.64rem;letter-spacing:.08em;padding:4px 9px;border-radius:4px;white-space:nowrap;display:inline-block}
+.imp.hi{background:rgba(224,82,78,.16);color:#F0908C}
+.imp.mx{background:rgba(212,175,55,.16);color:var(--gold-soft)}
+.imp.md{background:rgba(137,149,168,.14);color:var(--muted)}
+.cal tr.flag td{background:rgba(212,175,55,.05)}
+.exec{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.exec .block{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.exec .block .label{display:block;margin-bottom:10px}
+.exec .block.warn{border-color:rgba(224,82,78,.3);background:rgba(224,82,78,.04)}
+.exec .block.warn .label{color:#F0908C}
+.exec .block p{font-size:.94rem;color:#BAC4D4}
+.exec .block p b{color:var(--ink);font-weight:500}
+.takeaway{margin-top:18px;background:linear-gradient(150deg,rgba(212,175,55,.12),rgba(212,175,55,.02));border:1px solid rgba(212,175,55,.35);border-radius:16px;padding:30px 32px}
+.takeaway .label{color:var(--gold)}
+.takeaway p{font-family:'Cormorant',serif;font-size:1.5rem;line-height:1.4;color:var(--ink);margin-top:10px;font-weight:400}
+.takeaway p b{color:var(--gold-soft);font-weight:600}
+
+/* BECA TECNOLÓGICA */
+.beca-section{padding:56px 0;border-top:1px solid var(--line);background:linear-gradient(180deg,rgba(212,175,55,.03),transparent 40%)}
+.beca-intro{text-align:center;max-width:640px;margin:0 auto 40px}
+.beca-eyebrow{font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px}
+.beca-heading{font-family:'Cormorant',serif;font-weight:500;font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.15}
+.beca-heading em{font-style:italic;color:var(--gold-soft)}
+.beca-sub{font-size:.95rem;color:#BAC4D4;margin-top:16px;line-height:1.6}
+.beca-sub b{color:var(--ink);font-weight:500}
+.beca-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+.beca-card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:32px 28px;position:relative;text-align:left}
+.beca-card.featured{border-color:rgba(212,175,55,.5);background:linear-gradient(160deg,var(--panel-2),var(--panel));box-shadow:var(--shadow)}
+.beca-ribbon{position:absolute;top:-11px;left:28px;background:var(--gold);color:#0B0B0E;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.62rem;letter-spacing:.1em;padding:5px 12px;border-radius:5px}
+.beca-price{font-family:'Space Grotesk';font-weight:700;font-size:2.4rem;color:var(--gold-soft)}
+.beca-price sup{font-size:1.1rem;top:-1em;color:var(--gold)}
+.beca-tier{font-family:'JetBrains Mono';font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:block;margin-top:6px}
+.beca-divider{height:1px;background:var(--line);margin:18px 0}
+.beca-features{list-style:none;font-size:.88rem;color:#BAC4D4}
+.beca-features li{padding:6px 0 6px 20px;position:relative}
+.beca-features li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700}
+.beca-features li.feat-gold{color:var(--gold-soft)}
+.beca-note{font-size:.82rem;color:var(--muted);margin:16px 0 20px;line-height:1.5}
+.btn-beca{display:block;text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.02em;text-decoration:none;padding:13px 18px;border-radius:9px;margin-bottom:10px;transition:transform .15s ease}
+.btn-beca.primary{background:linear-gradient(150deg,var(--gold-soft),var(--gold));color:#0B0B0E;box-shadow:0 8px 20px rgba(212,175,55,.25)}
+.btn-beca.primary:hover{transform:translateY(-2px)}
+.btn-beca.secondary{background:transparent;border:1px solid var(--line);color:var(--muted)}
+.beca-how{max-width:760px;margin:32px auto 0;font-size:.88rem;color:#A9B3C2;line-height:1.7;text-align:center}
+.beca-how b{color:var(--ink)}
+.beca-how strong{color:var(--gold-soft)}
+.direct-pay{max-width:900px;margin:28px auto 0;display:grid;grid-template-columns:1.4fr 1fr;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 26px}
+.direct-pay p{font-size:.88rem;color:#BAC4D4;line-height:1.6}
+.direct-pay p b{color:var(--ink)}
+.dp-links{display:flex;flex-direction:column;gap:8px}
+.dp-btn{text-align:center;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.76rem;text-decoration:none;padding:11px 14px;border-radius:8px}
+.dp-primary{background:var(--gold-glow);color:var(--gold-soft);border:1px solid rgba(212,175,55,.35)}
+.dp-sec{background:transparent;border:1px solid var(--line);color:var(--muted)}
+
+/* ECOSISTEMA */
+.ecosystem-section{padding:48px 0;border-top:1px solid var(--line)}
+.eco-eyebrow{display:block;text-align:center;font-family:'JetBrains Mono';font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:24px}
+.eco-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.eco-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px 14px;text-align:center;text-decoration:none;transition:border-color .2s,transform .2s}
+.eco-card:hover{border-color:rgba(212,175,55,.35);transform:translateY(-2px)}
+.eco-icon{font-size:1.5rem;margin-bottom:8px}
+.eco-name{font-family:'Space Grotesk';font-size:.82rem;font-weight:600;color:var(--ink)}
+.eco-handle{font-family:'JetBrains Mono';font-size:.66rem;color:var(--muted);margin-top:3px}
+
+/* FOOTER CTA */
+footer{border-top:1px solid var(--line);margin-top:0;padding:42px 0 56px}
+.cta-main{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;background:linear-gradient(150deg,var(--panel-2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:26px 30px;margin-bottom:28px}
+.cta-main h4{font-family:'Space Grotesk';font-weight:600;font-size:1.15rem}
+.cta-main p{font-size:.86rem;color:var(--muted);margin-top:4px}
+.cta-btns{display:flex;gap:10px;flex-wrap:wrap}
+.cta-btn{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.02em;text-decoration:none;padding:13px 20px;border-radius:9px;white-space:nowrap}
+.cta-btn.gold{background:linear-gradient(150deg,var(--gold-soft),var(--gold));color:#0B0B0E;box-shadow:0 8px 20px rgba(212,175,55,.25)}
+.cta-btn.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.disclaimer{font-size:.74rem;line-height:1.7;color:var(--muted);max-width:78ch}
+.disclaimer b{color:#A9B3C2}
+.sources{font-family:'JetBrains Mono';font-size:.66rem;color:var(--gold-deep);letter-spacing:.04em;margin-top:18px;line-height:1.8}
+.foot-brand{display:flex;justify-content:space-between;align-items:center;margin-top:26px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap;gap:10px}
+.foot-brand span{font-family:'JetBrains Mono';font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.foot-brand a{color:var(--gold-soft);text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media(max-width:760px){
+  .hero-grid,.duo,.exec,.beca-grid{grid-template-columns:1fr}
+  .beca-card.featured{order:-1}
+  .three .topic{grid-template-columns:1fr;gap:8px}
+  .topic .big-num{font-size:2.4rem}
+  .rung{grid-template-columns:1fr auto;gap:8px}
+  .rung .tier{grid-column:1/-1}
+  .cal thead{display:none}
+  .cal,.cal tbody,.cal tr,.cal td{display:block;width:100%}
+  .cal tr{border:1px solid var(--line);border-radius:12px;margin-bottom:12px;padding:8px}
+  .cal td{border:none;padding:6px 12px}
+  .eco-grid{grid-template-columns:repeat(3,1fr)}
+  .direct-pay{grid-template-columns:1fr}
+  .cta-main{grid-template-columns:1fr}
+  .fb-topbar-links{display:none}
+}
+@media(max-width:480px){
+  .eco-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{padding:36px 0 28px}
+  .hero h1{font-size:clamp(2.2rem,8vw,3.2rem)}
+  .beca-card{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="fb-topbar">
+  <div class="fb-topbar-inner">
+    <div class="fb-topbar-left">
+      <div class="fb-pulse"></div>
+      <span class="fb-topbar-label">Fortune Builders AI Trading · Recurso Oficial</span>
+    </div>
+    <div class="fb-topbar-links">
+      <a href="https://t.me/IaTradingFortuneBuilders" target="_blank" rel="noopener">Canal Gratuito</a>
+      <span class="fb-topbar-sep">·</span>
+      <a href="https://escaner.fortunebuilders.ai/" target="_blank" rel="noopener">Escáner de IA</a>
+      <span class="fb-topbar-sep">·</span>
+      <a href="https://recursos.fortunebuilders.ai/" target="_blank" rel="noopener">Más Recursos</a>
+      <span class="fb-topbar-sep">·</span>
+      <a href="https://www.youtube.com/@TradingconIA" target="_blank" rel="noopener">YouTube</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="wrap topbar">
+    <div class="brand">
+      <svg width="42" height="42" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="none" style="flex:none;border-radius:9px">
+        <rect width="44" height="44" rx="9" fill="#0B0B0E"/>
+        <rect x="0.75" y="0.75" width="42.5" height="42.5" rx="8.25" stroke="#D4AF37" stroke-width="1" opacity="0.7"/>
+        <circle cx="8" cy="8" r="1.8" fill="#D4AF37" opacity="0.55"/>
+        <circle cx="36" cy="8" r="1.8" fill="#D4AF37" opacity="0.55"/>
+        <circle cx="8" cy="36" r="1.8" fill="#D4AF37" opacity="0.55"/>
+        <circle cx="36" cy="36" r="1.8" fill="#D4AF37" opacity="0.55"/>
+        <line x1="9.8" y1="8" x2="16" y2="8" stroke="#D4AF37" stroke-width="0.8" opacity="0.3"/>
+        <line x1="28" y1="8" x2="34.2" y2="8" stroke="#D4AF37" stroke-width="0.8" opacity="0.3"/>
+        <line x1="8" y1="9.8" x2="8" y2="16" stroke="#D4AF37" stroke-width="0.8" opacity="0.3"/>
+        <line x1="36" y1="9.8" x2="36" y2="16" stroke="#D4AF37" stroke-width="0.8" opacity="0.3"/>
+        <text x="22" y="28" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="800" font-size="15" fill="#D4AF37" letter-spacing="-0.5">FB</text>
+      </svg>
+      <div>
+        <b>FORTUNE BUILDERS</b>
+        <span>AI Trading · Inteligencia de Mercado</span>
+      </div>
+    </div>
+    <div class="stamp">
+      <span class="num">13 – 17 JUL 2026</span>
+      <small>Reporte semanal · 13 de julio de 2026</small>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap reveal">
+    <span class="eyebrow">Reporte de inteligencia · Mercado del oro</span>
+    <h1>El oro rompió los $4,000 — y esta vez, <em>la guerra no lo rescató.</em></h1>
+    <div class="asset">XAUUSD · ORO SPOT · CFD · ANÁLISIS SEMANAL</div>
+    <div class="hero-grid">
+      <p class="thesis">
+        La presión dominante esta semana es <b>bajista</b>. Durante el fin de semana, EE.UU. e Irán intercambiaron nuevos ataques con misiles y drones, y Trump anunció la reinstauración de un bloqueo a los buques iraníes en el Estrecho de Hormuz. El petróleo saltó con fuerza — pero el oro, en vez de subir por demanda de refugio, cayó más de 2% el lunes y perforó los $4,000: el mercado está leyendo la escalada como una amenaza inflacionaria que refuerza las apuestas de un alza de tasas en septiembre, no como un disparador clásico de refugio. Esta semana llega el CPI de junio y dos días de testimonio de Warsh ante el Congreso.
+      </p>
+      <div class="price-card">
+        <span class="label">Referencia · feed TVC</span>
+        <div class="big num">$4,001.50</div>
+        <div class="sub">Lunes 13 jul 2026 · Mínimo intradía $3,996.55</div>
+        <div class="bias-tag">
+          <span class="dot"></span>
+          SESGO BAJISTA · CONVICCIÓN ALTA
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">01</span>
+      <h2>Sesgo direccional de la semana</h2>
+      <span class="tail"></span>
+    </div>
+    <div class="duo reveal">
+
+      <div class="card">
+        <div class="kicker">Lectura de corto plazo</div>
+        <h3>El oro cayó mientras la guerra subía el petróleo <span class="pill bear">BAJISTA</span></h3>
+        <p>Durante la noche del domingo al lunes, EE.UU. e Irán protagonizaron su cuarto intercambio de ataques en una semana. Trump anunció que EE.UU. "reinstaura el bloqueo" a buques iraníes en el Estrecho de Hormuz, autoproclamándose "guardián" del paso y anunciando un cobro del 20% sobre toda la carga que transite por ahí. El petróleo (WTI) saltó a $74.61, más de 3%. El oro, en la lógica clásica de refugio, debería haber subido. En cambio, cayó más de 2% a $4,020 y luego perforó los $4,000 durante el día — porque el mercado leyó el salto del petróleo como riesgo inflacionario, no como pánico, y elevó las apuestas de un alza de tasas en septiembre a cerca de 70%.</p>
+        <ul>
+          <li>El rendimiento del bono a 10 años saltó a 4.614% el lunes, su nivel más alto en cerca de dos meses, revirtiendo la caída de la semana pasada</li>
+          <li>El DXY se sostiene cerca de 101.1-101.25, dentro del rango de 100.5-102 en el que lleva atrapado tres semanas, a la espera de catalizador</li>
+          <li>El oro cotiza en su nivel más débil desde antes del rebote post-NFP, con el mínimo intradía del lunes en $3,996.55</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="kicker">Lectura estructural</div>
+        <h3>El canal que domina ya no es el refugio: es la inflación <span class="pill bear">BAJISTA</span></h3>
+        <p>Este es el dato clave para entender la semana: la escalada en el Golfo no está comprando demanda de refugio para el oro esta vez. FXStreet lo señaló explícitamente este lunes — "las tensiones geopolíticas no han logrado levantar al dólar refugio en esta ocasión". El mecanismo de transmisión pasa por el petróleo y la inflación, no por el miedo. Mientras el crudo siga caro y las apuestas de alza de tasas sigan subiendo, cada nuevo titular de Irán presiona al oro hacia abajo en vez de hacia arriba — lo opuesto de cómo se comportó el oro en episodios anteriores de este mismo conflicto.</p>
+        <ul>
+          <li>Un estudio técnico de RSI muestra divergencia alcista, sugiriendo que la presión bajista podría estar perdiendo fuerza — señal a vigilar, no una confirmación todavía</li>
+          <li>China extendió su racha de compras de oro del banco central a 20 meses consecutivos en junio, llevando sus reservas oficiales a 75.44 millones de onzas — el soporte estructural de fondo sigue intacto</li>
+          <li>Mientras el precio no recupere $4,100 en cierre H4, el sesgo de corto-mediano plazo permanece bajista</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">02</span>
+      <h2>Niveles clave a vigilar</h2>
+      <span class="tail"></span>
+    </div>
+    <div class="ladder reveal">
+
+      <div class="rung res">
+        <span class="tier">Resistencia 3</span>
+        <span class="desc">Media móvil de 50 días. Recuperar este nivel confirmaría un cambio de tendencia mayor, no solo un rebote técnico.</span>
+        <span class="lvl num">$4,352</span>
+      </div>
+
+      <div class="rung res">
+        <span class="tier">Resistencia 2</span>
+        <span class="desc">Zona estructural mayor, techo de los rangos de las últimas semanas. Objetivo de un rebote sostenido, no del rebote inicial.</span>
+        <span class="lvl num">$4,203</span>
+      </div>
+
+      <div class="rung res arena">
+        <span class="tier">Resistencia 1 · LÍNEA EN LA ARENA</span>
+        <span class="desc">Zona de balance principal de la semana pasada ($4,100-4,125), ahora convertida en resistencia tras la ruptura. Cierre H4 por encima cancela el sesgo bajista.</span>
+        <span class="lvl num">$4,100</span>
+      </div>
+
+      <div class="rung now">
+        <span class="tier">Precio ahora</span>
+        <span class="desc">Cierre de referencia del lunes 13 jul 2026 (feed TVC). Mínimo intradía en $3,996.55 tras la escalada del fin de semana en el Golfo.</span>
+        <span class="lvl num">$4,001</span>
+      </div>
+
+      <div class="rung sup">
+        <span class="tier">Soporte 1</span>
+        <span class="desc">Nivel psicológico ya perforado intradía. Un cierre diario sostenido por debajo abriría la puerta a probar los mínimos de inicio de julio.</span>
+        <span class="lvl num">$3,960</span>
+      </div>
+
+      <div class="rung sup">
+        <span class="tier">Soporte 2</span>
+        <span class="desc">Mínimo del ciclo post-NFP de la semana del 29 de junio. Zona de demanda técnica que ya defendió el precio una vez este mes.</span>
+        <span class="lvl num">$3,942</span>
+      </div>
+
+      <div class="rung sup">
+        <span class="tier">Soporte 3</span>
+        <span class="desc">Nivel psicológico redondo. Su pérdida reforzaría la narrativa mediática de "oro por debajo de los $4,000" de forma sostenida.</span>
+        <span class="lvl num">$3,900</span>
+      </div>
+
+      <div class="rung sup">
+        <span class="tier">Soporte 4</span>
+        <span class="desc">Soporte estructural de más largo plazo. Representaría una corrección de aproximadamente 32% desde el máximo histórico de enero 2026.</span>
+        <span class="lvl num">$3,800</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">03</span>
+      <h2>Los 3 asuntos que mueven el oro esta semana</h2>
+      <span class="tail"></span>
+    </div>
+    <div class="three reveal">
+
+      <div class="topic">
+        <div class="big-num">1</div>
+        <div>
+          <div class="meta">Mar 14 Jul · 8:30 AM ET / 7:30 AM COL · Evento estrella</div>
+          <h3>CPI de junio + doble testimonio de Warsh ante el Congreso</h3>
+          <p>
+            El consenso espera que el CPI headline se enfríe de 4.2% a cerca de 3.9% interanual, arrastrado por una caída del 10% en la gasolina de junio — pero el CPI subyacente (core) se mantiene pegado cerca de 2.9%, el número que realmente vigila la Fed. El detalle que puede desactivar el alivio de un titular "benigno": la caída de la gasolina de junio es previa a la escalada de este fin de semana, así que cualquier lectura de julio ya lucirá distinta. Noventa minutos después del dato, Warsh testifica ante la Cámara de Representantes, y el miércoles repite ante el Senado — dos oportunidades para que el mercado escuche directamente cómo la Fed está leyendo la combinación de petróleo caro e inflación core pegajosa. <b>Un CPI headline suave que no logre bajar las apuestas de alza sería la confirmación más clara del sesgo bajista; solo una sorpresa a la baja en el dato core cambiaría el tono de la semana.</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="topic">
+        <div class="big-num">2</div>
+        <div>
+          <div class="meta">Riesgo permanente · Monitor diario · El comodín que ahora juega en contra</div>
+          <h3>Irán y el bloqueo de Hormuz: la misma guerra, un efecto distinto sobre el oro</h3>
+          <p>
+            Trump anunció la reinstauración de un bloqueo a buques iraníes en el Estrecho de Hormuz — la ruta por la que transita cerca de una quinta parte del petróleo mundial — declarando a EE.UU. como "guardián" del paso y anunciando un cobro del 20% sobre la carga que circule por ahí. Es el cuarto ataque de EE.UU. contra Irán en una semana, tras un ataque iraní contra un buque de bandera chipriota. El oro no está reaccionando como refugio esta vez: el canal dominante es el petróleo más caro alimentando expectativas de inflación y de alza de tasas. <b>Mientras esa lectura se mantenga, cada nuevo titular del conflicto presiona al oro hacia abajo. Solo un giro hacia una escalada que amenace directamente activos financieros globales —o una noticia de desescalada real— podría revertir esta dinámica.</b>
+          </p>
+        </div>
+      </div>
+
+      <div class="topic">
+        <div class="big-num">3</div>
+        <div>
+          <div class="meta">Mié-Vie 15-17 Jul · Batería de datos · Segunda ronda de contexto inflacionario</div>
+          <h3>PPI, Retail Sales, Philly Fed y Michigan Sentiment cierran la semana de datos</h3>
+          <p>
+            El miércoles llega el PPI de junio, la lectura de precios al productor que confirma o contradice la historia del CPI del día anterior. El jueves es el día más cargado: Initial Jobless Claims, Retail Sales de junio y el índice manufacturero de la Fed de Filadelfia, los tres a las 8:30 AM ET — la lectura más clara de la semana sobre consumo y salud del mercado laboral. El viernes cierra con la lectura preliminar de julio del sentimiento del consumidor de la Universidad de Michigan, que incluye expectativas de inflación a 1 y 5 años — un termómetro directo de cómo la escalada en el Golfo está calando en las expectativas de la calle. <b>Con la temporada de resultados de grandes bancos (JPMorgan, Goldman Sachs, Wells Fargo) coincidiendo con el CPI el martes, es una semana densa que puede generar volatilidad cruzada entre acciones, bonos y el oro.</b>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">04</span>
+      <h2>Calendario económico de alto impacto</h2>
+      <span class="tail"></span>
+    </div>
+    <div class="reveal">
+      <table class="cal">
+        <thead>
+          <tr>
+            <th>Día</th>
+            <th>Hora</th>
+            <th>Evento</th>
+            <th>Impacto en el oro</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr class="flag">
+            <td class="day">Mar 14 Jul ⭐</td>
+            <td class="time">8:30 AM ET<small>7:30 AM COL</small></td>
+            <td class="ev">
+              <b>CPI de junio · EVENTO ESTRELLA</b>
+              <span>Consenso: headline ~3.9% interanual (desde 4.2%); core ~2.9%. La caída de gasolina de junio es previa a la escalada del fin de semana.</span>
+            </td>
+            <td><span class="imp hi">CRÍTICO</span></td>
+          </tr>
+
+          <tr class="flag">
+            <td class="day">Mar 14 Jul</td>
+            <td class="time">~10:00 AM ET<small>~9:00 AM COL</small></td>
+            <td class="ev">
+              <b>Testimonio de Warsh — Cámara de Representantes</b>
+              <span>Primera de dos comparecencias ante el Congreso esta semana. Reacción directa al CPI, 90 minutos después de su publicación.</span>
+            </td>
+            <td><span class="imp hi">CRÍTICO</span></td>
+          </tr>
+
+          <tr>
+            <td class="day">Mié 15 Jul</td>
+            <td class="time">8:30 AM ET<small>7:30 AM COL</small></td>
+            <td class="ev">
+              <b>PPI de junio</b>
+              <span>Precios al productor. Confirma o contradice la lectura de inflación subyacente del CPI del día anterior.</span>
+            </td>
+            <td><span class="imp mx">ALTO</span></td>
+          </tr>
+
+          <tr>
+            <td class="day">Mié 15 Jul</td>
+            <td class="time">10:00 AM ET<small>9:00 AM COL</small></td>
+            <td class="ev">
+              <b>Testimonio de Warsh — Comité Bancario del Senado</b>
+              <span>Segunda comparecencia consecutiva. Segunda oportunidad del mercado para calibrar el tono de la Fed tras el CPI.</span>
+            </td>
+            <td><span class="imp mx">ALTO</span></td>
+          </tr>
+
+          <tr>
+            <td class="day">Jue 16 Jul</td>
+            <td class="time">8:30 AM ET<small>7:30 AM COL</small></td>
+            <td class="ev">
+              <b>Initial Jobless Claims + Retail Sales (jun) + Philly Fed</b>
+              <span>Tres datos simultáneos: consumo, mercado laboral y actividad manufacturera regional en una sola mañana.</span>
+            </td>
+            <td><span class="imp mx">ALTO</span></td>
+          </tr>
+
+          <tr>
+            <td class="day">Vie 17 Jul</td>
+            <td class="time">10:00 AM ET<small>9:00 AM COL</small></td>
+            <td class="ev">
+              <b>Michigan Consumer Sentiment (prelim. jul)</b>
+              <span>Incluye expectativas de inflación a 1 y 5 años — termómetro directo del efecto de la escalada en el Golfo sobre las expectativas de la calle.</span>
+            </td>
+            <td><span class="imp mx">ALTO</span></td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="idx">05</span>
+      <h2>Plan de ejecución</h2>
+      <span class="tail"></span>
+    </div>
+
+    <div class="exec reveal">
+      <div class="block">
+        <span class="label">Día y sesión de mayor riesgo</span>
+        <p>
+          <b>Martes 14 de julio, 8:30 AM ET / 7:30 AM COL</b> con el CPI, seguido 90 minutos después por el primer testimonio de Warsh: es la combinación de mayor potencial de volatilidad de la semana. El <b>miércoles 15</b> repite el patrón con el PPI y la segunda comparecencia de Warsh ante el Senado — dos días consecutivos donde la Fed puede mover el mercado con una sola frase.
+        </p>
+      </div>
+      <div class="block warn">
+        <span class="label">Escenario a evitar</span>
+        <p>
+          <b>Asumir que un titular de escalada en Irán automáticamente sube el oro.</b> Esta semana el mercado está leyendo el conflicto por el canal inflacionario, no por el de refugio — un nuevo ataque puede empujar el oro hacia abajo, no hacia arriba, mientras ese marco se mantenga. Si el precio no recupera <b>$4,100</b> en cierre H4, el sesgo bajista permanece vigente: no anticipar rebotes por titulares geopolíticos sin confirmación de estructura. Vigilar especialmente la reacción del petróleo — si el crudo revierte con fuerza a la baja, esa sería la señal de que el canal está cambiando de nuevo hacia el refugio clásico.
+        </p>
+      </div>
+    </div>
+
+    <div class="takeaway reveal">
+      <span class="label">Conclusión para un trader inteligente del oro</span>
+      <p>
+        El sesgo dominante esta semana es <b>BAJISTA</b> con convicción alta. El oro perforó los $4,000 mientras el petróleo subía por la escalada en el Golfo — la señal más clara de que el mercado está operando bajo el canal de inflación y tasas, no bajo el de refugio clásico. Los rebotes hacia <b>$4,100</b> son zonas de interés para la dirección bajista, no confirmación de que el piso ya se formó, aunque la divergencia alcista en el RSI merece vigilancia. <b>La línea en la arena es $4,100 en cierre H4.</b> Si el precio recupera ese nivel, el sesgo bajista se cancela y el plan operativo cambia.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section><div class="wrap">
+  <div class="sec-head reveal"><span class="idx">06</span><h2>Seguimiento: qué dijo el reporte anterior</h2><span class="tail"></span></div>
+  <div class="duo reveal" style="grid-template-columns:1fr">
+    <div class="card">
+      <div class="kicker">Auditoría · Semana 6 – 10 Jul 2026</div>
+      <h3>El sesgo alcista se sostuvo en la línea, pero no en la dirección <span class="pill parcial">PARCIAL</span></h3>
+      <p><b>Qué se dijo:</b> El reporte de la semana pasada declaró sesgo <b>ALCISTA con convicción ALTA</b> (6 factores alcistas contra 0 bajistas), sostenido en un NFP de junio muy débil (57,000 empleos) y un tono más medido de Warsh en Sintra. La línea en la arena declarada era: si el precio perdía $4,030 en cierre H4, el sesgo alcista quedaría suspendido.</p>
+      <p style="margin-top:10px"><b>Qué pasó:</b> El oro abrió la semana en un máximo de dos semanas ($4,155 el lunes 6 de julio), en línea con la proyección. Pero a mitad de semana, EE.UU. e Irán reengancharon el conflicto militar, rompiendo el alto el fuego previo y disparando el petróleo. El oro cayó a $4,076 el miércoles antes de las Actas del FOMC —que confirmaron un comité genuinamente dividido (9 a 8/9)— y cerró la semana en $4,111, una caída de cerca de 2% frente al viernes anterior. El precio nunca cerró por debajo de $4,030: la línea en la arena se mantuvo intacta en todo momento.</p>
+      <p style="margin-top:10px"><b>Por qué:</b> El factor que frenó la continuidad alcista fue exactamente el comodín que ese reporte identificó como de doble filo: el conflicto con Irán. En vez de aportar impulso alcista adicional al oro (como sugería el marco de refugio clásico), la reescalada militar empujó al petróleo y a las expectativas de inflación al alza, lo que revivió las apuestas de un alza de tasas de la Fed y presionó al oro a la baja — el mismo mecanismo que domina esta semana, ahora de forma aún más marcada.</p>
+      <p style="margin-top:10px"><b>Ajuste para esta semana:</b> El aprendizaje directo de la semana pasada se aplica esta semana en el factor #5 del Marcador de Evidencia: un evento geopolítico no se pondera automáticamente como alcista para el oro solo por ser un evento geopolítico. Cuando el canal de transmisión dominante es el petróleo-inflación-tasas (como ha sido durante todo julio), la escalada en Irán se pondera como bajista para el oro, no como alcista — hasta que haya evidencia clara de que el mercado ha vuelto a operar bajo el marco de refugio clásico.</p>
+    </div>
+  </div>
+</div></section>
+
+<div class="beca-section">
+  <div class="wrap">
+    <div class="beca-intro reveal">
+      <span class="beca-eyebrow">Ecosistema Fortune Builders AI Trading</span>
+      <h2 class="beca-heading">Opera el oro con la misma tecnología<br>que creó <em>este reporte</em></h2>
+      <p class="beca-sub">El Escáner de IA, las señales profesionales y el CopyTrading automático que analizamos en este informe son accesibles para cualquier trader de LATAM. <b>Tu propio capital de trading te da acceso al ecosistema completo.</b></p>
+    </div>
+    <div class="beca-grid reveal">
+      <div class="beca-card">
+        <div class="beca-price"><sup>$</sup>500</div>
+        <span class="beca-tier">Beca Tecnológica · Acceso Base</span>
+        <div class="beca-divider"></div>
+        <ul class="beca-features">
+          <li>Escáner de IA en TradingView — entradas, SL, TP1/TP2/TP3</li>
+          <li>Canal VIP Premium de Señales — Oro, Forex, Índices, Cripto</li>
+          <li>Panel estadístico con backtesting en tiempo real</li>
+          <li>Acompañamiento del equipo de Fortune Builders</li>
+        </ul>
+        <p class="beca-note">Deposita $500 en tu cuenta de trading con el broker aliado. Tu capital permanece en tu cuenta.</p>
+        <a href="https://go.vantagefx.com/visit/?bta=59208&nci=5645" target="_blank" rel="noopener" class="btn-beca primary">Activar Beca $500 →</a>
+        <a href="https://t.me/FortuneBuildersSupport4" target="_blank" rel="noopener" class="btn-beca secondary">Hablar con soporte</a>
+      </div>
+      <div class="beca-card featured">
+        <div class="beca-ribbon">MÁS COMPLETA</div>
+        <div class="beca-price"><sup>$</sup>1,000</div>
+        <span class="beca-tier">Beca Tecnológica · Ecosistema Completo</span>
+        <div class="beca-divider"></div>
+        <ul class="beca-features">
+          <li>Escáner de IA en TradingView — entradas, SL, TP1/TP2/TP3</li>
+          <li>Canal VIP Premium de Señales — Oro, Forex, Índices, Cripto</li>
+          <li class="feat-gold">CopyTrading Golden Bullish automático — Oro XAU/USD</li>
+          <li class="feat-gold">Sistema 100% automático · Sin martingala · Sin intervención</li>
+          <li>Panel estadístico con backtesting en tiempo real</li>
+          <li>Acompañamiento prioritario del equipo</li>
+        </ul>
+        <p class="beca-note">La misma estrategia de Oro analizada semana a semana en este reporte, operando automáticamente en tu cuenta.</p>
+        <a href="https://go.vantagefx.com/visit/?bta=59208&nci=5645" target="_blank" rel="noopener" class="btn-beca primary">Activar Beca $1,000 →</a>
+        <a href="https://t.me/FortuneBuildersSupport4" target="_blank" rel="noopener" class="btn-beca secondary">Hablar con soporte</a>
+      </div>
+    </div>
+    <div class="beca-how reveal">
+      <p><b>¿Cómo funciona la Beca Tecnológica?</b> Registras tu cuenta en el broker aliado (Vantage Markets, regulado por ASIC/FCA) y realizas el depósito de $500 o $1,000. <strong>Ese dinero es tu propio capital de trading</strong> — permanece en tu cuenta y lo usas para operar. El broker nos compensa con una comisión por abrirte la cuenta, y esa comisión financia tu acceso al ecosistema. No hay costos ocultos. No hay pagos a Fortune Builders.</p>
+    </div>
+    <div class="direct-pay reveal">
+      <div>
+        <p><b>¿Prefieres acceso directo sin broker?</b><br>También puedes suscribirte al Escáner de IA directamente. Desde $99/mes para traders ya becados, o $199/mes precio regular.</p>
+      </div>
+      <div class="dp-links">
+        <a href="https://escaner.fortunebuilders.ai/" target="_blank" rel="noopener" class="dp-btn dp-primary">Ver Escáner de IA →</a>
+        <a href="https://t.me/FortuneBuildersPayBot" target="_blank" rel="noopener" class="dp-btn dp-sec">Pagar con PayBot</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="ecosystem-section">
+  <div class="wrap">
+    <span class="eco-eyebrow reveal">Todos los canales oficiales de Fortune Builders AI Trading</span>
+    <div class="eco-grid reveal">
+      <a href="https://www.instagram.com/samuelarango.ai" target="_blank" rel="noopener" class="eco-card">
+        <div class="eco-icon">📸</div><div class="eco-name">Instagram</div><div class="eco-handle">@samuelarango.ai</div>
+      </a>
+      <a href="https://t.me/IaTradingFortuneBuilders" target="_blank" rel="noopener" class="eco-card">
+        <div class="eco-icon">📡</div><div class="eco-name">Comunidad Gratuita</div><div class="eco-handle">Telegram · Gratis</div>
+      </a>
+      <a href="https://t.me/FortuneBuildersSupport4" target="_blank" rel="noopener" class="eco-card">
+        <div class="eco-icon">💬</div><div class="eco-name">Soporte Oficial</div><div class="eco-handle">@FBSupport4</div>
+      </a>
+      <a href="https://www.youtube.com/@TradingconIA" target="_blank" rel="noopener" class="eco-card">
+        <div class="eco-icon">▶️</div><div class="eco-name">YouTube</div><div class="eco-handle">TradingconIA</div>
+      </a>
+      <a href="https://recursos.fortunebuilders.ai/" target="_blank" rel="noopener" class="eco-card">
+        <div class="eco-icon">📚</div><div class="eco-name">Centro de Recursos</div><div class="eco-handle">recursos.FB.ai</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="cta-main reveal">
+      <div>
+        <h4>¿Tienes dudas sobre el ecosistema?</h4>
+        <p>El equipo de soporte de Fortune Builders AI Trading te guía en la activación, la Beca Tecnológica o el Escáner de IA.</p>
+      </div>
+      <div class="cta-btns">
+        <a href="https://t.me/FortuneBuildersSupport4" target="_blank" rel="noopener" class="cta-btn gold">Hablar con soporte →</a>
+        <a href="https://t.me/IaTradingFortuneBuilders" target="_blank" rel="noopener" class="cta-btn outline">Unirse · canal gratis</a>
+      </div>
+    </div>
+    <p class="disclaimer">
+      <b>Aviso de riesgo.</b> Este reporte es contenido educativo y de análisis de mercado, no una recomendación de inversión ni una señal garantizada. El trading de CFDs con apalancamiento conlleva un alto riesgo y puede no ser adecuado para todos; podrías perder la totalidad de tu capital. <b>Fortune Builders AI Trading no promete ni garantiza rentabilidades.</b> Los niveles, precios y escenarios aquí descritos son referencias técnicas sujetas a cambios por condiciones de mercado, spread, horario y ejecución. Opera únicamente con capital que puedas permitirte perder y bajo tu propia gestión de riesgo. Rendimientos pasados no garantizan resultados futuros.
+    </p>
+    <p class="sources">
+      Fuentes: TradingView (captura XAUUSD H1, 13 jul 2026) · TradingEconomics (precio del oro, DXY, bono 10Y) ·
+      Yahoo Finance / CNBC (precio del oro, tratamiento de yields, bloqueo de Hormuz) ·
+      Reuters vía Investing.com (mercados asiáticos, escalada Irán) · CNBC (Treasury yields, declaración de Trump sobre Hormuz) ·
+      FXStreet (reacción técnica del oro, divergencia RSI) · Kitco News (niveles técnicos, DXY, yields) ·
+      IG UK / BLS.gov (calendario y consenso del CPI de junio) · FXMacroData / CME Group (calendario PPI) ·
+      Scotiabank / TradingKey / The M&A Hunter (calendario económico semana 13-17 jul 2026) ·
+      DBS Group Research vía FXStreet (rango del DXY, testimonio de Warsh) ·
+      Reporte previo verificado: reportesemanaloro.fortunebuilders.ai/2026-07-06 ·
+      Datos al 13 de julio de 2026.
+    </p>
+    <div class="foot-brand">
+      <span>Fortune Builders AI Trading · <a href="https://fortunebuilders.ai/" target="_blank">fortunebuilders.ai</a></span>
+      <span>Reporte semanal · 13 – 17 Jul 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
