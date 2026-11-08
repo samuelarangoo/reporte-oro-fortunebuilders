@@ -1,11 +1,5 @@
 {
-  "week": "1 al 6 de noviembre de 2026",
-  "updatedAt": "2026-11-05T10:03:00-05:00",
-  "items": [
-    {
-      "timestamp": "5 de noviembre · 10:03 a. m. Miami",
-      "title": "El oro recuperó USD 4,000",
-      "body": "Reuters reportó USD 4,117.69 a las 8:16 a. m. Miami. La lectura bajista del domingo está en revisión; el cierre exacto de 4 horas por encima de USD 3,960 aún debe verificarse. El viernes se publican los datos de empleo y confianza del consumidor."
-    }
-  ]
+  "week": "9 al 13 de noviembre de 2026",
+  "updatedAt": "2026-11-08",
+  "items": []
 }
